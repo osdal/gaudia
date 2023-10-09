@@ -8,16 +8,19 @@
 }
 
 .first-red-section h1 {
+  font-weight: normal;
+  font-style: italic;
   padding-bottom: 6.25rem;
 }
 
 .first-red-section h1 span {
-  font-style: italic;
+  font-style: normal;
   font-weight: 700;
 }
 
 .frs-content {
   padding: 0 15.625rem;
+  width: 95rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -25,7 +28,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 7.88rem;
+  margin-bottom: 7rem;
 }
 
 .frs-content p {
@@ -43,10 +46,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   gap: 1.25rem;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 0px;
-          flex: 1 0 0;
+  height: 3.75rem;
   margin: 3.5rem;
   font-weight: 300;
 }
@@ -66,12 +70,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 10rem;
 }
 
 .gss__container {
   gap: 10rem;
   padding: 10rem 0 10rem 0;
+  width: 100%;
 }
 
 .gss__container h2 {
@@ -91,6 +95,9 @@
 }
 
 .gss-block {
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -116,7 +123,7 @@
 }
 
 .line {
-  width: 40.5625rem;
+  width: 38rem;
   height: 0.125rem;
 }
 
@@ -127,7 +134,7 @@
 }
 
 .gss__container .gss-block:nth-child(odd) .line {
-  width: 24.25rem;
+  width: 19rem;
 }
 
 .gss__container .gss-block:nth-child(odd) .text-common {
@@ -190,10 +197,26 @@
 }
 
 .yts-block.portrets {
+  position: relative;
+  height: 60rem;
+}
+
+.yts-block.portrets .wrap {
+  position: absolute;
+  left: -200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.portret {
+  height: 42.1875rem;
+  width: 25rem;
+  border-radius: 62.4375rem;
+  background-position: center top !important;
+  background-size: cover !important;
 }
 
 .card {
@@ -218,12 +241,58 @@
 .no-webp .prabhupad{
   background: url("../img/prabhupada.jpg"); }
 
-.portret {
-  height: 42.1875rem;
-  width: 25rem;
-  border-radius: 62.4375rem;
-  background-position: center top !important;
-  background-size: cover !important;
+.slider.bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 46em;
+}
+
+.dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: rgba(79, 125, 219, 0.3);
+  border-radius: 50%;
+}
+
+.dots .dot:first-child {
+  background-color: #4f7ddb;
+}
+
+.round_arrows_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.round_arrows_block div {
+  height: 3rem;
+  width: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.75rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50px;
+  border: 3px solid #4f7ddb;
+  opacity: 0.5;
+}
+
+.right_arrow {
+  border: 3px solid #4f7ddb !important;
 }
 
 .yts .bottom-block .subscribe-btn {
@@ -344,7 +413,6 @@ h6 {
           flex-direction: column;
   overflow: hidden;
   background-color: #d9f3f5;
-  padding: 0.625rem;
 }
 
 @supports (overflow: clip) {
@@ -370,11 +438,6 @@ h6 {
 Сніппет (HTML): cnt
 */
 
-[class*=__container] {
-  max-width: 90rem;
-  margin: 0 auto;
-}
-
 [class*=-ibg] {
   position: relative;
 }
@@ -392,6 +455,10 @@ h6 {
 [class*=-ibg_contain] img {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+section {
+  overflow: hidden;
 }
 
 .row-align-center {
@@ -569,9 +636,8 @@ h6 {
 }
 
 header {
-  height: 12.5rem;
   background-color: #db5024;
-  border-radius: 1.5625rem 1.5625rem 0 0;
+  border-radius: 1.5625rem;
 }
 
 .top_bar {
